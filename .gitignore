@@ -18,6 +18,9 @@
 
 # misc
 .DS_Store
+
+# embedded git repository
+domainetf-lite-frontend/
 *.pem
 
 # debug
