@@ -24,7 +24,8 @@ import {
   ArrowUpDown,
   Wallet,
   Shield,
-  Layers
+  Layers,
+  RefreshCw
 } from 'lucide-react';
 
 export const DomaExplorerAdvanced: React.FC = () => {

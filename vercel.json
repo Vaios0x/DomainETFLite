@@ -10,11 +10,11 @@
     }
   },
   "env": {
-    "NEXT_PUBLIC_DOMA_RPC": "@doma-rpc",
-    "NEXT_PUBLIC_PERP_ADDRESS": "@perp-address",
-    "NEXT_PUBLIC_CHAIN_ID": "@chain-id",
-    "NEXT_PUBLIC_SOCKET_URL": "@socket-url",
-    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": "@walletconnect-project-id"
+    "NEXT_PUBLIC_DOMA_RPC": "https://rpc-testnet.doma.xyz",
+    "NEXT_PUBLIC_PERP_ADDRESS": "0x0000000000000000000000000000000000000000",
+    "NEXT_PUBLIC_CHAIN_ID": "1001",
+    "NEXT_PUBLIC_SOCKET_URL": "https://domain-etflite.vercel.app",
+    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": "your-walletconnect-project-id"
   },
   "headers": [
     {
@@ -33,12 +33,6 @@
           "value": "Content-Type, Authorization"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/socket/(.*)",
-      "destination": "https://your-socket-server.vercel.app/$1"
     }
   ]
 }
