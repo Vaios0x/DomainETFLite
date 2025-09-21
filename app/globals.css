@@ -1,12 +1,14 @@
 /* ===========================================
-   TAILWIND CSS v4 IMPORTS
+   TAILWIND CSS v3 IMPORTS
    =========================================== */
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ===========================================
    CSS VARIABLES & THEME CONFIGURATION
    =========================================== */
-@theme {
+:root {
   /* Base colors */
   --color-background: 0 0% 100%;
   --color-foreground: 222.2 84% 4.9%;
