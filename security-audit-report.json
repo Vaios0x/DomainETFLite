@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-09-17T02:56:49.519Z",
+  "issues": [],
+  "warnings": [
+    {
+      "level": "warning",
+      "message": "Potential unbounded loops detected",
+      "file": "DomainPerpPool.sol",
+      "timestamp": "2025-09-17T02:56:49.501Z"
+    },
+    {
+      "level": "warning",
+      "message": "Potential unbounded loops detected",
+      "file": "DomaIntegration.sol",
+      "timestamp": "2025-09-17T02:56:49.503Z"
+    },
+    {
+      "level": "warning",
+      "message": "Potentially vulnerable package detected: socket.io",
+      "file": null,
+      "timestamp": "2025-09-17T02:56:49.504Z"
+    },
+    {
+      "level": "warning",
+      "message": "No Content Security Policy detected",
+      "file": "C:\\Daaps\\Domain ETFLite\\app\\(public)\\layout.tsx",
+      "timestamp": "2025-09-17T02:56:49.516Z"
+    },
+    {
+      "level": "warning",
+      "message": "No Content Security Policy detected",
+      "file": "C:\\Daaps\\Domain ETFLite\\app\\layout.tsx",
+      "timestamp": "2025-09-17T02:56:49.517Z"
+    }
+  ],
+  "totalIssues": 5,
+  "severity": "HIGH"
+}

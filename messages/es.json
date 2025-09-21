@@ -1,0 +1,76 @@
+{
+  "navigation": {
+    "dashboard": "Panel",
+    "trade": "Comercio",
+    "liquidity": "Liquidez",
+    "leaderboard": "Clasificación"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "refresh": "Actualizar",
+    "connect": "Conectar",
+    "disconnect": "Desconectar"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "subtitle": "Monitorea las métricas de trading perpetuo de DomainETF y la acción del precio",
+    "tvl": "Valor Total Bloqueado",
+    "openInterest": "Interés Abierto",
+    "fundingRate": "Tasa de Financiamiento 24h",
+    "currentPrice": "Precio Actual",
+    "change24h": "Cambio 24h",
+    "volume24h": "Volumen 24h",
+    "lastUpdate": "Última Actualización"
+  },
+  "trade": {
+    "title": "Comercio",
+    "subtitle": "Comercia swaps perpetuos en DomainETF",
+    "direction": "Dirección",
+    "long": "Largo",
+    "short": "Corto",
+    "size": "Tamaño (USDC)",
+    "leverage": "Apalancamiento",
+    "openPosition": "Abrir Posición",
+    "closePosition": "Cerrar Posición",
+    "estimatedFill": "Precio Est. de Llenado",
+    "positionValue": "Valor de Posición",
+    "marginRequired": "Margen Requerido"
+  },
+  "liquidity": {
+    "title": "Liquidez",
+    "subtitle": "Proporciona liquidez para ganar comisiones del trading perpetuo",
+    "addLiquidity": "Agregar Liquidez",
+    "removeLiquidity": "Remover Liquidez",
+    "yourShare": "Tu Participación",
+    "projectedAPR": "APR Proyectado",
+    "amount": "Cantidad (USDC)"
+  },
+  "leaderboard": {
+    "title": "Clasificación",
+    "subtitle": "Mejores traders por rendimiento de PnL 24h",
+    "rank": "Posición",
+    "trader": "Trader",
+    "pnl24h": "PnL 24h",
+    "trades": "Operaciones",
+    "volume": "Volumen"
+  },
+  "errors": {
+    "walletNotConnected": "Por favor conecta tu wallet primero",
+    "invalidAmount": "Cantidad inválida",
+    "insufficientBalance": "Balance insuficiente",
+    "transactionFailed": "Transacción fallida",
+    "networkError": "Error de red",
+    "unknownError": "Ocurrió un error desconocido"
+  },
+  "success": {
+    "positionOpened": "Posición abierta exitosamente",
+    "positionClosed": "Posición cerrada exitosamente",
+    "liquidityAdded": "Liquidez agregada exitosamente",
+    "liquidityRemoved": "Liquidez removida exitosamente"
+  }
+}

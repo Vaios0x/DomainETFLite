@@ -1,0 +1,76 @@
+{
+  "navigation": {
+    "dashboard": "Dashboard",
+    "trade": "Trade",
+    "liquidity": "Liquidity",
+    "leaderboard": "Leaderboard"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "refresh": "Refresh",
+    "connect": "Connect",
+    "disconnect": "Disconnect"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Monitor DomainETF perpetual trading metrics and price action",
+    "tvl": "Total Value Locked",
+    "openInterest": "Open Interest",
+    "fundingRate": "24h Funding Rate",
+    "currentPrice": "Current Price",
+    "change24h": "24h Change",
+    "volume24h": "24h Volume",
+    "lastUpdate": "Last Update"
+  },
+  "trade": {
+    "title": "Trade",
+    "subtitle": "Trade perpetual swaps on DomainETF",
+    "direction": "Direction",
+    "long": "Long",
+    "short": "Short",
+    "size": "Size (USDC)",
+    "leverage": "Leverage",
+    "openPosition": "Open Position",
+    "closePosition": "Close Position",
+    "estimatedFill": "Est. Fill Price",
+    "positionValue": "Position Value",
+    "marginRequired": "Margin Required"
+  },
+  "liquidity": {
+    "title": "Liquidity",
+    "subtitle": "Provide liquidity to earn fees from perpetual trading",
+    "addLiquidity": "Add Liquidity",
+    "removeLiquidity": "Remove Liquidity",
+    "yourShare": "Your Share",
+    "projectedAPR": "Projected APR",
+    "amount": "Amount (USDC)"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Top traders by 24h PnL performance",
+    "rank": "Rank",
+    "trader": "Trader",
+    "pnl24h": "24h PnL",
+    "trades": "Trades",
+    "volume": "Volume"
+  },
+  "errors": {
+    "walletNotConnected": "Please connect your wallet first",
+    "invalidAmount": "Invalid amount",
+    "insufficientBalance": "Insufficient balance",
+    "transactionFailed": "Transaction failed",
+    "networkError": "Network error",
+    "unknownError": "An unknown error occurred"
+  },
+  "success": {
+    "positionOpened": "Position opened successfully",
+    "positionClosed": "Position closed successfully",
+    "liquidityAdded": "Liquidity added successfully",
+    "liquidityRemoved": "Liquidity removed successfully"
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://domainetf-lite.vercel.app/sitemap.xml

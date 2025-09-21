@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-17T02:56:51.685Z",
+  "metrics": {
+    "bundleSize": 0,
+    "imageOptimization": 100,
+    "codeSplitting": 0,
+    "caching": 75,
+    "compression": 0,
+    "lighthouse": 80
+  },
+  "issues": [
+    {
+      "level": "issue",
+      "message": "Low code splitting ratio detected",
+      "metric": "codeSplitting",
+      "timestamp": "2025-09-17T02:56:51.677Z"
+    },
+    {
+      "level": "issue",
+      "message": "Compression not properly configured",
+      "metric": "compression",
+      "timestamp": "2025-09-17T02:56:51.679Z"
+    },
+    {
+      "level": "issue",
+      "message": "Lighthouse score below target: 80",
+      "metric": "lighthouse",
+      "timestamp": "2025-09-17T02:56:51.680Z"
+    }
+  ],
+  "recommendations": []
+}

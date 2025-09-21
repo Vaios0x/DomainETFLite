@@ -1,0 +1,786 @@
+/* ===========================================
+   TAILWIND CSS v4 IMPORTS
+   =========================================== */
+@import "tailwindcss";
+
+/* ===========================================
+   CSS VARIABLES & THEME CONFIGURATION
+   =========================================== */
+@theme {
+  /* Base colors */
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  
+  /* Card colors */
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222.2 84% 4.9%;
+  
+  /* Popover colors */
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222.2 84% 4.9%;
+  
+  /* Primary colors */
+  --color-primary: 222.2 47.4% 11.2%;
+  --color-primary-foreground: 210 40% 98%;
+  
+  /* Secondary colors */
+  --color-secondary: 210 40% 96%;
+  --color-secondary-foreground: 222.2 84% 4.9%;
+  
+  /* Muted colors */
+  --color-muted: 210 40% 96%;
+  --color-muted-foreground: 215.4 16.3% 46.9%;
+  
+  /* Accent colors */
+  --color-accent: 210 40% 96%;
+  --color-accent-foreground: 222.2 84% 4.9%;
+  
+  /* Destructive colors */
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 210 40% 98%;
+  
+  /* Border & input colors */
+  --color-border: 214.3 31.8% 91.4%;
+  --color-input: 214.3 31.8% 91.4%;
+  --color-ring: 222.2 84% 4.9%;
+  
+  /* Border radius */
+  --radius: 0.5rem;
+  
+  /* Dark theme colors */
+  --color-dark-background: 222.2 84% 4.9%;
+  --color-dark-foreground: 210 40% 98%;
+  --color-dark-card: 222.2 84% 4.9%;
+  --color-dark-card-foreground: 210 40% 98%;
+  --color-dark-popover: 222.2 84% 4.9%;
+  --color-dark-popover-foreground: 210 40% 98%;
+  --color-dark-primary: 210 40% 98%;
+  --color-dark-primary-foreground: 222.2 47.4% 11.2%;
+  --color-dark-secondary: 217.2 32.6% 17.5%;
+  --color-dark-secondary-foreground: 210 40% 98%;
+  --color-dark-muted: 217.2 32.6% 17.5%;
+  --color-dark-muted-foreground: 215 20.2% 65.1%;
+  --color-dark-accent: 217.2 32.6% 17.5%;
+  --color-dark-accent-foreground: 210 40% 98%;
+  --color-dark-destructive: 0 62.8% 30.6%;
+  --color-dark-destructive-foreground: 210 40% 98%;
+  --color-dark-border: 217.2 32.6% 17.5%;
+  --color-dark-input: 217.2 32.6% 17.5%;
+  --color-dark-ring: 212.7 26.8% 83.9%;
+}
+
+/* ===========================================
+   BASE STYLES & RESET
+   =========================================== */
+* {
+  border-color: hsl(var(--color-border));
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--color-ring)), 0 0 0 4px hsl(var(--color-background));
+}
+
+/* ===========================================
+   KEYFRAME ANIMATIONS
+   =========================================== */
+@keyframes slide-in-from-right-full {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-to-right-full {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  }
+}
+
+@keyframes price-up {
+  0% {
+    background-color: rgba(34, 197, 94, 0.1);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes price-down {
+  0% {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ===========================================
+   ANIMATION UTILITY CLASSES
+   =========================================== */
+.animate-in {
+  animation: slide-in-from-right-full 0.3s ease-out;
+}
+
+.animate-out {
+  animation: slide-out-to-right-full 0.3s ease-in;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-price-up {
+  animation: price-up 1s ease-out;
+}
+
+.animate-price-down {
+  animation: price-down 1s ease-out;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ===========================================
+   SCROLLBAR STYLES
+   =========================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(var(--color-muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--color-muted-foreground));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--color-foreground));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--color-muted-foreground)) hsl(var(--color-muted));
+}
+
+/* ===========================================
+   GRADIENT UTILITIES
+   =========================================== */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===========================================
+   TRADING SPECIFIC STYLES
+   =========================================== */
+/* Position types */
+.long-position {
+  border-left: 4px solid #10b981;
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.dark .long-position {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.short-position {
+  border-left: 4px solid #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.dark .short-position {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Profit/Loss indicators */
+.profit {
+  color: #10b981;
+}
+
+.dark .profit {
+  color: #34d399;
+}
+
+.loss {
+  color: #ef4444;
+}
+
+.dark .loss {
+  color: #f87171;
+}
+
+/* Price indicators */
+.price-up {
+  color: #10b981;
+}
+
+.dark .price-up {
+  color: #34d399;
+}
+
+.price-down {
+  color: #ef4444;
+}
+
+.dark .price-down {
+  color: #f87171;
+}
+
+.price-neutral {
+  color: hsl(var(--color-muted-foreground));
+}
+
+/* Position status indicators */
+.position-open {
+  border-left: 4px solid #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.dark .position-open {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.position-closed {
+  border-left: 4px solid #6b7280;
+  background-color: rgba(107, 114, 128, 0.05);
+}
+
+.dark .position-closed {
+  background-color: rgba(107, 114, 128, 0.1);
+}
+
+.position-liquidated {
+  border-left: 4px solid #f97316;
+  background-color: rgba(249, 115, 22, 0.05);
+}
+
+.dark .position-liquidated {
+  background-color: rgba(249, 115, 22, 0.1);
+}
+
+/* Leverage indicators */
+.leverage-low {
+  color: #10b981;
+}
+
+.dark .leverage-low {
+  color: #34d399;
+}
+
+.leverage-medium {
+  color: #f59e0b;
+}
+
+.dark .leverage-medium {
+  color: #fbbf24;
+}
+
+.leverage-high {
+  color: #ef4444;
+}
+
+.dark .leverage-high {
+  color: #f87171;
+}
+
+/* Funding rate indicators */
+.funding-positive {
+  color: #ef4444;
+}
+
+.dark .funding-positive {
+  color: #f87171;
+}
+
+.funding-negative {
+  color: #10b981;
+}
+
+.dark .funding-negative {
+  color: #34d399;
+}
+
+.funding-neutral {
+  color: hsl(var(--color-muted-foreground));
+}
+
+/* ===========================================
+   COMPONENT STYLES
+   =========================================== */
+/* Trading cards */
+.trading-card {
+  background-color: hsl(var(--color-card));
+  border: 1px solid hsl(var(--color-border));
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.trading-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-color: hsl(var(--color-primary) / 0.2);
+}
+
+/* Price display */
+.price-display {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background-color: hsl(var(--color-card));
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.chart-container canvas {
+  border-radius: 0.5rem;
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid hsl(var(--color-input));
+  border-radius: 0.375rem;
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: hsl(var(--color-muted-foreground));
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: hsl(var(--color-primary));
+  box-shadow: 0 0 0 2px hsl(var(--color-ring));
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-primary-foreground));
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: hsl(var(--color-primary) / 0.9);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--color-ring)), 0 0 0 4px hsl(var(--color-background));
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-secondary {
+  background-color: hsl(var(--color-secondary));
+  color: hsl(var(--color-secondary-foreground));
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: hsl(var(--color-secondary) / 0.8);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--color-ring)), 0 0 0 4px hsl(var(--color-background));
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-destructive {
+  background-color: hsl(var(--color-destructive));
+  color: hsl(var(--color-destructive-foreground));
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-destructive:hover {
+  background-color: hsl(var(--color-destructive) / 0.9);
+}
+
+.btn-destructive:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--color-ring)), 0 0 0 4px hsl(var(--color-background));
+}
+
+.btn-destructive:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Loading states */
+.loading-skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: hsl(var(--color-muted));
+  border-radius: 0.25rem;
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 50%;
+  border: 2px solid hsl(var(--color-muted));
+  border-top-color: hsl(var(--color-primary));
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.dark .status-success {
+  background-color: #14532d;
+  color: #bbf7d0;
+}
+
+.status-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.dark .status-warning {
+  background-color: #78350f;
+  color: #fde68a;
+}
+
+.status-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.dark .status-error {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.status-info {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.dark .status-info {
+  background-color: #1e3a8a;
+  color: #bfdbfe;
+}
+
+/* ===========================================
+   LAYOUT UTILITIES
+   =========================================== */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .mobile-full {
+    width: 100%;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-padding {
+    padding: 1rem;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .mobile-grid-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+  
+  .trading-card {
+    margin: 0 0.5rem;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-destructive {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tablet-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chart-container {
+    height: 350px;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .desktop-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .chart-container {
+    height: 400px;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Large desktop optimizations */
+@media (min-width: 1440px) {
+  .chart-container {
+    height: 450px;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* ===========================================
+   ACCESSIBILITY & PREFERENCES
+   =========================================== */
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .trading-card {
+    border-width: 2px;
+  }
+  
+  .btn-primary {
+    border: 2px solid hsl(var(--color-primary));
+  }
+  
+  .btn-secondary {
+    border: 2px solid hsl(var(--color-secondary));
+  }
+  
+  .btn-destructive {
+    border: 2px solid hsl(var(--color-destructive));
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-pulse {
+    animation: none;
+  }
+  
+  .animate-spin {
+    animation: none;
+  }
+  
+  .animate-fade-in {
+    animation: none;
+  }
+  
+  .animate-pulse-glow {
+    animation: none;
+  }
+  
+  .animate-price-up,
+  .animate-price-down {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-dark-background);
+    --color-foreground: var(--color-dark-foreground);
+    --color-card: var(--color-dark-card);
+    --color-card-foreground: var(--color-dark-card-foreground);
+    --color-popover: var(--color-dark-popover);
+    --color-popover-foreground: var(--color-dark-popover-foreground);
+    --color-primary: var(--color-dark-primary);
+    --color-primary-foreground: var(--color-dark-primary-foreground);
+    --color-secondary: var(--color-dark-secondary);
+    --color-secondary-foreground: var(--color-dark-secondary-foreground);
+    --color-muted: var(--color-dark-muted);
+    --color-muted-foreground: var(--color-dark-muted-foreground);
+    --color-accent: var(--color-dark-accent);
+    --color-accent-foreground: var(--color-dark-accent-foreground);
+    --color-destructive: var(--color-dark-destructive);
+    --color-destructive-foreground: var(--color-dark-destructive-foreground);
+    --color-border: var(--color-dark-border);
+    --color-input: var(--color-dark-input);
+    --color-ring: var(--color-dark-ring);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .trading-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-destructive {
+    background: none !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+}
